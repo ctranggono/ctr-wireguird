@@ -1,3 +1,3 @@
 go generate
 go build
-sudo ./wireguird
+sudo ./lottefastvpn

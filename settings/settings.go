@@ -9,7 +9,7 @@ import (
 	"github.com/ungerik/go-dry"
 )
 
-const FilePath = "./wireguird.settings"
+const FilePath = "./lottefastvpn.settings"
 
 type Settings struct {
 	MultipleTunnels bool

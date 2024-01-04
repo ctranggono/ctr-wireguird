@@ -18,8 +18,8 @@ import (
 	"github.com/ungerik/go-dry"
 	"golang.zx2c4.com/wireguard/wgctrl/wgtypes"
 
-	"github.com/UnnoTed/wireguird/gui/get"
-	"github.com/UnnoTed/wireguird/settings"
+	"github.com/ctranggono/ctr-wireguird/gui/get"
+	"github.com/ctranggono/ctr-wireguird/settings"
 	"github.com/dustin/go-humanize"
 	"github.com/gotk3/gotk3/gdk"
 	"github.com/gotk3/gotk3/glib"
@@ -346,7 +346,7 @@ func (t *Tunnels) Create() error {
 	btnAddTunnel.Connect("clicked", func() {
 		err := func() error {
 			log.Print("btn add tunnel")
-			dialog, err := gtk.FileChooserNativeDialogNew("Wireguird - Choose tunnel files (*.conf, *.zip)", window, gtk.FILE_CHOOSER_ACTION_OPEN, "OK", "Cancel")
+			dialog, err := gtk.FileChooserNativeDialogNew("Lotte FastVPN - Choose tunnel files (*.conf, *.zip)", window, gtk.FILE_CHOOSER_ACTION_OPEN, "OK", "Cancel")
 			if err != nil {
 				return err
 			}
@@ -461,7 +461,7 @@ func (t *Tunnels) Create() error {
 
 	btnZipTunnels.Connect("clicked", func() {
 		err := func() error {
-			d, err := gtk.FileChooserDialogNewWith2Buttons("Wireguird - zip tunnels -> Save zip file", window, gtk.FILE_CHOOSER_ACTION_SAVE, "Cancel", gtk.RESPONSE_CANCEL, "Save", gtk.RESPONSE_ACCEPT)
+			d, err := gtk.FileChooserDialogNewWith2Buttons("Lotte FastVPN - zip tunnels -> Save zip file", window, gtk.FILE_CHOOSER_ACTION_SAVE, "Cancel", gtk.RESPONSE_CANCEL, "Save", gtk.RESPONSE_ACCEPT)
 			if err != nil {
 				panic(err)
 			}

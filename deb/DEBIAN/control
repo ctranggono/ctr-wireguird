@@ -1,9 +1,10 @@
-Package: wireguird
-Source: wireguird
+Package: lottefastvpn
+Source: lottefastvpn
 Version: 1.1
 Section: utils
 Priority: extra
 Architecture: amd64
 Depends: wireguard-tools, resolvconf, libayatana-appindicator3-1
 Maintainer: UnnoTed
+Recompile: Catur for LDCI
 Description: GTK GUI for Wireguard

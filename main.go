@@ -7,8 +7,8 @@ import (
 
 	"github.com/UnnoTed/go-appindicator"
 	"github.com/UnnoTed/horizontal"
-	"github.com/UnnoTed/wireguird/gui"
-	"github.com/UnnoTed/wireguird/static"
+	"github.com/ctranggono/ctr-wireguird/gui"
+	"github.com/ctranggono/ctr-wireguird/static"
 	"github.com/gotk3/gotk3/gdk"
 	"github.com/gotk3/gotk3/glib"
 	"github.com/gotk3/gotk3/gtk"
@@ -58,8 +58,8 @@ func createTray(application *gtk.Application) (*appindicator.Indicator, error) {
 	}
 
 	indicator := appindicator.New(application.GetApplicationID(), "wireguard_off", appindicator.CategoryApplicationStatus)
-	indicator.SetIconThemePath("/opt/wireguird/Icon")
-	indicator.SetTitle("Wireguird")
+	indicator.SetIconThemePath("/opt/lottefastvpn/Icon")
+	indicator.SetTitle("Lotte FastVPN")
 	// indicator.SetLabel("Wireguird", "")
 	indicator.SetStatus(appindicator.StatusActive)
 	indicator.SetMenu(menu)
@@ -148,7 +148,7 @@ func createWindow(application *gtk.Application) error {
 		win.ShowAll()
 	}
 
-	win.SetTitle("Wireguird")
+	win.SetTitle("Lotte FastVPN")
 
 	return nil
 }

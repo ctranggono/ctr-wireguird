@@ -7,7 +7,7 @@ import (
 	"time"
 
 	"github.com/UnnoTed/go-appindicator"
-	"github.com/UnnoTed/wireguird/gui/get"
+	"github.com/ctranggono/ctr-wireguird/gui/get"
 	"github.com/gotk3/gotk3/glib"
 	"github.com/gotk3/gotk3/gtk"
 	"github.com/rs/zerolog/log"
@@ -16,9 +16,9 @@ import (
 
 const (
 	Version     = "1.1.0"
-	Repo        = "https://github.com/UnnoTed/wireguird"
+	Repo        = "https://github.com/ctranggono/ctr-wireguird"
 	TunnelsPath = "/etc/wireguard/"
-	IconPath    = "/opt/wireguird/Icon/"
+	IconPath    = "/opt/lottefastvpn/Icon/"
 )
 
 var (
@@ -158,7 +158,7 @@ func createSettings(show bool) (*gtk.Window, error) {
 	}
 
 	if show {
-		settingsWindow.SetTitle("Wireguird - Settings")
+		settingsWindow.SetTitle("Lotte FastVPN - Settings")
 		settingsWindow.ShowAll()
 	}
 
@@ -167,7 +167,7 @@ func createSettings(show bool) (*gtk.Window, error) {
 
 func updateCheck() error {
 	log.Info().Msg("Checking for updates")
-	resp, err := http.Get("https://api.github.com/repos/UnnoTed/wireguird/releases")
+	resp, err := http.DefaultClient.Get("https://api.github.com/repos/ctranggono/ctr-wireguird/releases")
 	if err != nil {
 		return err
 	}
@@ -189,7 +189,7 @@ func updateCheck() error {
 
 		if tagName, ok := latest["tag_name"].(string); ok && tagName != "v"+Version {
 			glib.IdleAdd(func() {
-				d := gtk.MessageDialogNew(window, gtk.DIALOG_MODAL, gtk.MESSAGE_INFO, gtk.BUTTONS_OK, "Wireguird: update available => "+tagName)
+				d := gtk.MessageDialogNew(window, gtk.DIALOG_MODAL, gtk.MESSAGE_INFO, gtk.BUTTONS_OK, "Lotte Fast VPN: update available => "+tagName)
 				defer d.Destroy()
 
 				d.Run()

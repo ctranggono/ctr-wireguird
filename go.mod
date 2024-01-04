@@ -1,4 +1,4 @@
-module github.com/UnnoTed/wireguird
+module github.com/ctranggono/ctr-wireguird
 
 go 1.14
 
